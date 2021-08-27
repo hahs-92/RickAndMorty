@@ -1,0 +1,7 @@
+.Pagination_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.8rem;
+}
