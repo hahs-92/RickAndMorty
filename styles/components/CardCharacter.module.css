@@ -1,0 +1,33 @@
+
+.CharacterCard {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 420px;
+    max-height: 500px;
+    border-radius: 12px;
+    border: 2px solid var(--main-color);
+}
+
+.CharacterCard_Wrapper {
+    width: 90%;
+    padding: 20px 0px;
+}
+
+.ImageWrapper {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+}
+
+.ImageWrapper img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.ContentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+}

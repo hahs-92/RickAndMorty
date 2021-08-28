@@ -3,14 +3,13 @@
   grid-template: 200px auto / 1fr;
   min-height: 100vh;
   color: var(--black-color);
-  background-color: var(--main-color-bold);
 }
 
 .Header {
   justify-self: center;
   width: 90%;
   height: 90%;
-  background-color: var(--main-color);
+  border-bottom: 2px solid var(--main-color);
 }
 
 .main {

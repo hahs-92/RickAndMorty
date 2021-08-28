@@ -2,9 +2,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-color);
     border-radius: 12px;
+    border-bottom: 2px solid var(--main-color);
     cursor: pointer;
+    transition: all .5s ease-in;
+}
+
+.Card:hover {
+    transform: translateY(10px);
 }
 
 .Card_container {
@@ -25,7 +30,7 @@
     transform: scale(1.3);
 }
 
-.Card_container h2 {
+.Card_container h3 {
     height: 40px;
     overflow: hidden;
     white-space: nowrap;

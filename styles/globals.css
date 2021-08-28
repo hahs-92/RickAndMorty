@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 
+  --BG: #262c3a;
   --main-color: #3499db;
   --main-color-bold: #0377bd;
   --secundary-color: #30b724;

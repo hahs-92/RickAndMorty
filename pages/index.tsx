@@ -12,56 +12,6 @@ import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
 
-type Characters = {
-  id: number,
-  name: string,
-  image: string
-}
-
-type HomeProps = {
-  characters: Characters[]
-}
-
-// const GET_CHARACTERS = (page: number) => gql `
-// query getCharacters {
-//   characters(page:${page}) {
-//     results{
-//       id
-//       name
-//       image
-//     }
-//   }
-// }
-// `
-export const getServerSideProps: GetServerSideProps<HomeProps> = async ({query}) => {
-  const page = Number(query?.page) || 1
-  const {data} = await client.query({
-  query: gql `
-  query getCharacters {
-    characters(page:${page}) {
-      results{
-        id
-        name
-        image
-      }
-    }
-  }
-  `
-  })
-
-  if (!data) {
-  return {notFound: true,}
-  }
-
-  return {
-      props: { 
-          characters: data.characters.results
-      }
-  }
-}
-
-
-
 const Home = ({ characters}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <div className={styles.container}>
@@ -73,6 +23,7 @@ const Home = ({ characters}: InferGetServerSidePropsType<typeof getServerSidePro
       <section className={styles.Header }>
         <Header />
       </section>
+
       <main className={styles.main}>
         <section className={ styles.Characters}>
           {
@@ -94,6 +45,35 @@ const Home = ({ characters}: InferGetServerSidePropsType<typeof getServerSidePro
       </main>
     </div>
   )
+}
+
+
+export const getServerSideProps: GetServerSideProps<HomeProps> = async ({query}) => {
+  const page = Number(query?.page) || 1
+  try {
+    const {data} = await client.query({
+      query: gql `
+        query getCharacters {
+          characters(page:${page}) {
+            results{
+              id
+              name
+              image
+            }
+          }
+        }
+      `
+      })
+
+      return {
+          props: { 
+              characters: data.characters.results
+          }
+      }
+  } catch (error) {
+    return {notFound: true,}
+  }
+  
 }
 
 export default Home

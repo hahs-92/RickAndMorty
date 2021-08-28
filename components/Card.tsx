@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({id, title, image }) => {
         <article className={ styles.Card } onClick={() => router.push(`/character/${id}`)}>
             <div className={ styles.Card_container }>
                 <img src={image} alt={title} />
-                <h2>{title}</h2>
+                <h3>{title}</h3>
             </div>
         </article>
     )
