@@ -1,4 +1,3 @@
-import Link from "next/link"
 import Image from 'next/image'
 import {useRouter }from 'next/router'
 //styles
@@ -16,7 +15,13 @@ const Card: React.FC<CardProps> = ({id, title, image }) => {
     return(
         <article className={ styles.Card } onClick={() => router.push(`/character/${id}`)}>
             <div className={ styles.Card_container }>
-                <img src={image} alt={title} />
+                <Image 
+                    src={ image } 
+                    alt={ title } 
+                    width={ 280 } 
+                    height= { 280 } 
+                    layout='responsive'
+                    />
                 <h3>{title}</h3>
             </div>
         </article>

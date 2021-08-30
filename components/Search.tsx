@@ -35,7 +35,7 @@ const Search = () => {
         <section className={styles.Search}>
             <div className={ styles.Search_Wrapper }>
                 <form className={ styles.Form } onSubmit={ handleSubmit }>
-                    <label htmlFor="search">{loading ? 'Loading...' : 'Enter a Id'}</label>
+                    <label htmlFor="search">{loading ? 'Loading...' : 'Enter an ID'}</label>
                     <input 
                     className={ styles.Input_Text } 
                     type="text" 
@@ -48,7 +48,11 @@ const Search = () => {
                 <section>
                     {
                         data && 
-                            <Card id={data.character.id} title={ data.character.name} image={ data.character.image }/>
+                            <Card 
+                                id={data.character.id} 
+                                title={ data.character.name} 
+                                image={ data.character.image }
+                            />
                     }
                 </section>
             </div>

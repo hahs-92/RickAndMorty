@@ -1,3 +1,4 @@
+import Image from 'next/image'
 //styles
 import styles from '../styles/components/CardCharacter.module.css'
 
@@ -15,7 +16,7 @@ const CardCharacter: React.FC<CardCharacterProps> = ({id,name,status,gender,orig
         <article className={ styles.CharacterCard }>
             <div className={ styles.CharacterCard_Wrapper }>
                 <section className={ styles.ImageWrapper }>
-                    <img src={image} alt={name} />
+                    <Image src={image} alt={name}  width={ 300 } height={ 300 }/>
                 </section>
                 <section className={ styles.ContentWrapper }>
                     <h3>ID: <span> {id}</span></h3>
