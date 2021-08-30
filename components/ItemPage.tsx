@@ -1,16 +1,20 @@
-import Link from "next/link";
 //styles
 import styles from '../styles/components/ItemPage.module.css'
 
 type ButtonProps = {
-    index: number
+    title: number | string,
+    cb: (page?:number) => void 
 }
 
-const Button: React.FC<ButtonProps> = ({ index }) => {
+const Button: React.FC<ButtonProps> = ({title, cb }) => {
+
+    const handleChange = () => {
+       (typeof(title) === 'number') && cb(title)
+       cb()
+    }
+
     return(
-        <Link href={`?page=${index}`} >
-            <a className={ styles.ItemPage }>{index}</a>
-        </Link>
+        <li className={ styles.ItemPage } onClick={handleChange }>{title}</li>
     )
 }
 

@@ -7,7 +7,7 @@ import Card from './Card';
 import { gql } from "@apollo/client";
 import { useQuery } from '@apollo/client';
 
-const getQuery = (id: number | undefined) => (
+const getQuery = (id?: number ) => (
     gql`
         query getCharacter{
             character(id: ${id}){
@@ -19,10 +19,9 @@ const getQuery = (id: number | undefined) => (
     `
 )
 
-
 const Search = () => {
     const [filter, setFilter] = useState(0)
-    const { loading, error, data } = useQuery(getQuery(filter))
+    const { loading, data } = useQuery(getQuery(filter))
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setFilter(Number(e.target.value))
@@ -32,32 +31,24 @@ const Search = () => {
         e.preventDefault()
     }
 
-    console.log(data)
-
     return(
         <section className={styles.Search}>
             <div className={ styles.Search_Wrapper }>
                 <form className={ styles.Form } onSubmit={ handleSubmit }>
-                    <label htmlFor="search">Enter a Id</label>
+                    <label htmlFor="search">{loading ? 'Loading...' : 'Enter a Id'}</label>
                     <input 
                     className={ styles.Input_Text } 
                     type="text" 
                     id='search'
-                    name="search"  
-                    placeholder='Enter a ID' 
+                    name="search"   
                     value={filter}
                     onChange={ handleChange }
                     />
-                    {/* <input className={styles.Input_Button } type="submit" value='Search' /> */}
                 </form>
                 <section>
                     {
                         data && 
-                            <Card
-                                id={data.character.id}
-                                title={ data.character.name}
-                                image={ data.character.image }
-                            />
+                            <Card id={data.character.id} title={ data.character.name} image={ data.character.image }/>
                     }
                 </section>
             </div>
