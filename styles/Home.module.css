@@ -1,35 +1,6 @@
 .container {
   display: grid;
-  grid-template: 200px auto / 1fr;
-  min-height: 100vh;
+  grid-template: auto auto 120px / 1fr;
+  width: 90%;
   color: var(--black-color);
 }
-
-.Header {
-  justify-self: center;
-  width: 90%;
-  height: 90%;
-  border-bottom: 2px solid var(--main-color);
-}
-
-.main {
-  display: grid;
-  grid-template: auto 150px / 1fr;
-
-}
-
-.Characters {
-  justify-self: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  grid-auto-rows: auto;
-  grid-gap: 12px;
-  width: 90%;
-}
-
-.Pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-

@@ -5,7 +5,6 @@ import { gql } from "@apollo/client";
 import client from "../../apollo-client";
 import React from 'react';
 //components
-import Header from '../../components/Header'
 import CardCharacter from '../../components/CardCharacter';
 //styles
 import styles from '../../styles/Character.module.css'

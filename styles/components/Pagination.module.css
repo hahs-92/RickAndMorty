@@ -1,5 +1,14 @@
+.Pagination {
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
 .Pagination_container {
     width: 100%;
+    max-width: 420px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

@@ -1,0 +1,44 @@
+
+.Search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    min-height: 80px;
+}
+  
+.Search_Wrapper {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+}
+  
+.Form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+  
+.Input_Text {
+    border: 1px solid var(--main-color);
+    height: 40px;
+    width: 70%;
+    max-width: 200px;
+    border-radius: 12px;
+    padding: 2%;
+    font-family: 'ZCOOL KuaiLe';
+    outline: none;  
+}
+  
+.Input_Button {
+    height: 40px;
+    width: 25%;
+    max-width: 80px;
+    border: none;
+    background-color: var(--main-color);
+    border-radius: 12px;
+    font-family: 'ZCOOL KuaiLe';
+    cursor: pointer;
+}

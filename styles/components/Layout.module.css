@@ -1,0 +1,11 @@
+.Layout {
+    display: grid;
+    grid-template: 90px auto / 1fr;
+    min-height: 100vh;
+}
+
+.Main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

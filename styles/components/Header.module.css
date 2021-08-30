@@ -1,4 +1,10 @@
 .Header {
-    background-color: var(--main-color);
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--main-color);
+}
+
+.Header_wrapper {
+    width: 90%;
 }

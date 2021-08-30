@@ -1,0 +1,13 @@
+.ItemPage {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--main-color);
+    border-radius: 12px;
+}
+
+.ItemPage:hover {
+    background-color: var(--main-color);
+}

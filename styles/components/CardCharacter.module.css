@@ -2,9 +2,8 @@
 .CharacterCard {
     display: flex;
     justify-content: center;
-    width: 90%;
-    max-width: 420px;
-    max-height: 500px;
+    max-width: 380px;
+    max-height: 420px;
     border-radius: 12px;
     border: 2px solid var(--main-color);
 }
@@ -17,17 +16,21 @@
 .ImageWrapper {
     display: flex;
     justify-content: center;
-    height: 50%;
+    height: 60%;
 }
 
 .ImageWrapper img {
     width: 100%;
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .ContentWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50%;
+    height: 40%;
+}
+
+.ContentWrapper span {
+    font-weight: 400;
 }

@@ -18,11 +18,11 @@ const CardCharacter: React.FC<CardCharacterProps> = ({id,name,status,gender,orig
                     <img src={image} alt={name} />
                 </section>
                 <section className={ styles.ContentWrapper }>
-                    <h3>ID: {id}</h3>
-                    <h3>Name: {name}</h3>
-                    <h3>Status: {status}</h3>
-                    <h3>Gender: {gender}</h3>
-                    <h3>Origin: {origin}</h3>
+                    <h3>ID: <span> {id}</span></h3>
+                    <h3>Name: <span>{name}</span></h3>
+                    <h3>Status: <span>{status}</span></h3>
+                    <h3>Gender: <span>{gender}</span></h3>
+                    <h3>Origin: <span>{origin}</span></h3>
                 </section>
             </div>
         </article>
